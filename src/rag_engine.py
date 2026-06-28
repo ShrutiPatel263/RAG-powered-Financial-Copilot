@@ -9,7 +9,7 @@ from src.knowledge import get_finance_knowledge
 
 load_dotenv()  # reads your .env file
 
-# --- STEP A: SPLIT DOCUMENTS INTO CHUNKS ---
+# Step 1 : Split the documents into chunks
 def split_documents(documents: list) -> list:
     """
     Takes Documents (from PDF or CSV loader) and splits them
@@ -30,7 +30,7 @@ def split_documents(documents: list) -> list:
     return chunks
 
 
-# --- STEP B: BUILD THE VECTOR STORE ---
+# Step 2: Built the vector store
 def build_vector_store(user_documents: list) -> Chroma:
     """
     1. Takes user Documents (from PDF + CSV)
@@ -72,7 +72,7 @@ def build_vector_store(user_documents: list) -> Chroma:
     return vector_store
 
 
-# --- STEP C: QUERY THE RAG SYSTEM ---
+# Step 3: Query the RAG System
 def ask_question(question: str, vector_store: Chroma, analytics_text: str) -> str:
     """
     The full RAG query pipeline:
@@ -92,7 +92,7 @@ def ask_question(question: str, vector_store: Chroma, analytics_text: str) -> st
     )
     
     # Build the prompt
-    # We inject BOTH the hard analytics AND the retrieved context
+    # inject BOTH the hard analytics AND the retrieved context
     prompt = f"""You are a personal financial advisor.
 Answer the user's question using ONLY the data provided below.
 Be specific: mention exact amounts and categories.
@@ -107,7 +107,7 @@ User question: {question}
 
 Answer:"""
     
-    # Call Gemini 2.5 Flash
+    
     llm = ChatGoogleGenerativeAI(
         model="gemini-3-flash-preview",
         google_api_key=os.getenv("GOOGLE_API_KEY")
