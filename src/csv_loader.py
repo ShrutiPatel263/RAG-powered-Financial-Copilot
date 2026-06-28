@@ -12,7 +12,7 @@ def load_csv(file_path: str) -> tuple:
     # A DataFrame is like an Excel table — rows and columns
     df = pd.read_csv(file_path)
     
-    # --- NORMALIZE COLUMN NAMES ---
+    # Normalize Column Names 
     # Users might have "Date", "DATE", "date" — make it uniform
     df.columns = df.columns.str.lower().str.strip()
     
@@ -47,7 +47,7 @@ def load_csv(file_path: str) -> tuple:
     if "category" not in df.columns:
         df["category"] = "General"
     
-    # --- CONVERT TO DOCUMENTS FOR RAG ---
+    # Convert to document for RAG
     # Group transactions by month, make one Document per month
     documents = []
     
