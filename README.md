@@ -215,19 +215,6 @@ Hard numbers (totals, savings rate, health score) are computed from pandas befor
 
 Both user transaction chunks and finance domain knowledge (budgeting rules, debt strategies, savings guidelines) are stored in the same ChromaDB collection. A single similarity search retrieves both personal data and relevant advice together, which is what makes the answers specific and actionable rather than generic.
 
----
-
-## 📸 Screenshots
-
-> Add screenshots after deployment
-
-| Upload & Dashboard | Chat Interface |
-|---|---|
-| ![upload](screenshots/upload.png) | ![chat](screenshots/chat.png) |
-
----
-
-
 
 ## 🙋 Author
 
