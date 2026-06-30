@@ -7,7 +7,7 @@
 ![LangChain](https://img.shields.io/badge/LangChain-0.2+-green?style=flat)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20Store-orange?style=flat)
 ![Streamlit](https://img.shields.io/badge/Streamlit-UI-red?style=flat&logo=streamlit)
-![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-blue?style=flat&logo=google)
+![Gemini](https://img.shields.io/badge/Gemini-3%20Flash-blue?style=flat&logo=google)
 
 ---
 
@@ -100,7 +100,7 @@ financial_copilot/
 | Text Splitting | LangChain RecursiveCharacterTextSplitter |
 | Embeddings | Google Gemini `embedding-001` |
 | Vector Store | ChromaDB (local, persistent) |
-| LLM | Google Gemini 2.5 Flash |
+| LLM | gemini-3-flash-preview |
 | Framework | LangChain |
 | Environment | python-dotenv |
 
